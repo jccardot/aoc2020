@@ -100,7 +100,7 @@ MESSAGE etime skip iCurrent SKIP lFound SKIP iMin + iMax
 ---------------------------
 Renseignement (Press HELP to view stack trace)
 ---------------------------
-295 
+97 
 14144619 
 yes 
 1766397
