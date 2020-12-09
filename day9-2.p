@@ -45,7 +45,7 @@ DEFINE VARIABLE iSum          AS INT64       NO-UNDO.
 DEFINE VARIABLE lFound        AS LOGICAL     NO-UNDO.
 DEFINE VARIABLE lInitializing AS LOGICAL     INITIAL TRUE NO-UNDO.
 
-ETIME(TRUE).
+/* ETIME(TRUE). */
 
 INPUT FROM C:\Work\aoc\aoc2020\day9.txt.
 REPEAT:
@@ -72,13 +72,15 @@ DO iPos = 26 TO 1000:
     END.
 END.
 
+ETIME(TRUE).
+
 lFound = NO.
 DO iPos = 1 TO 1000:
     i = iPos.
     iSum = iNumber[i].
     iMin = iNumber[i].
     iMax = iNumber[i].
-    DO WHILE iSum < iCurrent AND i <= 1000:
+    DO WHILE iSum < iCurrent AND i < 1000:
         i = i + 1.
         iSum = iSum + iNumber[i].
         iMin = MINIMUM(iMin, iNumber[i]).
