@@ -95,10 +95,10 @@ FOR EACH ttAdapter:
     ELSE IF iOnes > 0 THEN DO:
         CASE iOnes:
             WHEN 1 THEN .
-            WHEN 2 THEN iPaths = iPaths * 2.
-            WHEN 3 THEN iPaths = iPaths * 4.
-            WHEN 4 THEN iPaths = iPaths * 7.
-            WHEN 5 THEN iPaths = iPaths * 13.
+            WHEN 2 THEN iPaths = iPaths * 2.  /* 2^(2-1) */
+            WHEN 3 THEN iPaths = iPaths * 4.  /* 2^(3-1) */
+            WHEN 4 THEN iPaths = iPaths * 7.  /* 2^(4-1) - 2^(4-3) + 1 */
+            WHEN 5 THEN iPaths = iPaths * 13. /* 2^(5-1) - 2^(5-3) + 1 */
             OTHERWISE MESSAGE "missing gap ratio"
                 VIEW-AS ALERT-BOX INFO BUTTONS OK.
         END CASE.
